@@ -4,11 +4,17 @@
 
 using namespace System;
 
-namespace BatLib {
-
+namespace BatLib
+{
 	public ref class BL_File
 	{
 	public:
-		static int Add(int a, int b);
+		static IO::StreamWriter^ CreateNew();
+		static IO::StreamWriter^ CreateNew(String^ name);
+		static IO::StreamWriter^ CreateNew(String^ name, String^ path);
+
+		static bool Run();
+		static bool Run(String^ name);
+		static bool Run(String^ name, String^ path);
 	};
 }

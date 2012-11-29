@@ -7,10 +7,15 @@ using namespace System;
 
 int main(array<System::String ^> ^args)
 {
-    Console::WriteLine(BL_File::Add(1 , 3));
+	Console::Write("Creating new batch file, Enter name: ");
+	String^ fileName = Console::ReadLine();
+	BL_File::CreateNew(fileName)->Close();
+	Console::WriteLine(fileName + ".bat created!");
 
+	Console::WriteLine("Edit and save " + fileName + ".bat, then press Enter");
+	Console::Read();
 
-
-	system("pause");
+	BL_File::Run();
+	
     return 0;
 }
